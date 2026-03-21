@@ -6,12 +6,7 @@
     <title>秋雨系列 | 词苑</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- 如果已添加 favicon -->
     <style>
-      body {
-        visibility: hidden;
-      }
-    </style>
-    <style>
-        body { font-family: 'KaiTi', 'SimSun', 'Songti SC', serif; background: linear-gradient(to bottom, #f8f5f2, #e8e0d9); color: #2c2c2c; margin: 0; padding: 0; line-height: 1.9; }
+        body { visibility: hidden,font-family: 'KaiTi', 'SimSun', 'Songti SC', serif; background: linear-gradient(to bottom, #f8f5f2, #e8e0d9); color: #2c2c2c; margin: 0; padding: 0; line-height: 1.9; }
         header { background: #5a7d9a; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav { max-width: 900px; margin: auto; display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; }
         nav a { color: white; text-decoration: none; font-size: 1.1em; }
@@ -29,20 +24,19 @@
     <script>
       fetch('header.html')
         .then(response => {
-          if (!response.ok) {
-            throw new Error('加载 header 失败');
-          }
+          if (!response.ok) throw new Error('加载 header 失败');
           return response.text();
         })
         .then(data => {
           document.body.insertAdjacentHTML('afterbegin', data);
+          document.body.style.visibility = 'visible';  // 关键：header 插入后再显示整个页面
         })
         .catch(error => {
           console.error('header 加载错误:', error);
-          // 可选：fallback 显示一个简单 header
-          document.body.insertAdjacentHTML('afterbegin', '<header><nav>加载失败，请刷新页面</nav></header>');
+          document.body.style.visibility = 'visible';  // 出错也强制显示，避免卡死
         });
     </script>
+
 
     <div class="container">
         <a href="index.html" class="back">← 返回首页</a>
