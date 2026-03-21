@@ -1,7 +1,7 @@
 /* 全局基础样式 */
 body {
     visibility: hidden; /* 先隐藏，防止闪烁 */
-    font-family: 'LXGW WenKai GB', '霞鹜文楷 GB', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+    font-family: 'KaiTi', 'SimSun', 'Songti SC', serif;
     background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
     color: #2c2c2c;
     margin: 0;
