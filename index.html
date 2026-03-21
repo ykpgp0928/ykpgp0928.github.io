@@ -5,19 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>国翔词苑 | 少年玉兰词集</title>
     <style>
-        body { font-family: 'KaiTi', 'SimSun', 'Songti SC', serif; background: linear-gradient(to bottom, #f8f5f2, #e8e0d9); color: #2c2c2c; margin: 0; padding: 0; line-height: 1.9; }
-        header { background: #5a7d9a; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav { max-width: 900px; margin: auto; display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; }
-        nav a { color: white; text-decoration: none; font-size: 1.1em; }
+        body {
+            font-family: 'KaiTi', 'SimSun', 'Songti SC', serif;
+            background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+            line-height: 1.9;
+        }
+        header {
+            background: #5a7d9a;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
         nav a:hover { color: #ffd700; }
-        .hero { text-align: center; padding: 80px 20px 60px; background: url('https://images.unsplash.com/photo-1580130684518-9e0c0f0e3f7a') center/cover no-repeat; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: url('https://images.unsplash.com/photo-1580130684518-9e0c0f0e3f7a') center/cover no-repeat;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
         .hero h1 { font-size: 3em; margin: 0; }
         .hero p { font-size: 1.4em; max-width: 700px; margin: 20px auto; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
-        .btn { background: white; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center; text-decoration: none; color: #2c2c2c; font-size: 1.25em; transition: all 0.3s; border: 1px solid #eee; }
-        .btn:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); color: #5a7d9a; }
-        footer { text-align: center; padding: 40px 20px; color: #777; font-size: 0.95em; }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .btn {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 1.25em;
+            transition: all 0.3s;
+            border: 1px solid #eee;
+        }
+        .btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            color: #5a7d9a;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+            font-size: 0.95em;
+        }
     </style>
 </head>
 <body>
@@ -39,10 +101,22 @@
     <div class="container">
         <h2 style="text-align:center; margin-bottom:40px;">选择词集系列</h2>
         <div class="buttons">
-            <a href="yulan.html" class="btn">🌸 玉兰系列<br><small>卜算子 · 浣溪沙</small></a>
-            <a href="shaonianyou.html" class="btn">🍂 少年游系列<br><small>秋风悲思 · 祖父抱恙</small></a>
-            <a href="#" class="btn">❄️ 春雪系列<br><small>待添加新词</small></a>
-            <a href="#" class="btn">⚔️ 少年心志<br><small>待添加新词</small></a>
+            <a href="yulan.html" class="btn">
+                🌸 玉兰系列<br>
+                <small style="font-size:0.85em; color:#666;">卜算子 · 浣溪沙</small>
+            </a>
+            <a href="shaonianyou.html" class="btn">
+                🍂 少年游系列<br>
+                <small style="font-size:0.85em; color:#666;">秋风悲思 · 祖父抱恙</small>
+            </a>
+            <a href="#" class="btn">
+                ❄️ 春雪系列<br>
+                <small style="font-size:0.85em; color:#666;">待添加新词</small>
+            </a>
+            <a href="#" class="btn">
+                ⚔️ 少年心志<br>
+                <small style="font-size:0.85em; color:#666;">待添加新词</small>
+            </a>
         </div>
     </div>
 
