@@ -30,18 +30,16 @@
     <script>
       fetch('header.html')
         .then(response => {
-          if (!response.ok) {
-            throw new Error('加载 header 失败');
-          }
+          if (!response.ok) throw new Error('加载 header 失败');
           return response.text();
         })
         .then(data => {
           document.body.insertAdjacentHTML('afterbegin', data);
+          document.body.style.visibility = 'visible';  // 关键：header 插入后再显示整个页面
         })
         .catch(error => {
           console.error('header 加载错误:', error);
-          // 可选：fallback 显示一个简单 header
-          document.body.insertAdjacentHTML('afterbegin', '<header><nav>加载失败，请刷新页面</nav></header>');
+          document.body.style.visibility = 'visible';  // 出错也强制显示，避免卡死
         });
     </script>
 
