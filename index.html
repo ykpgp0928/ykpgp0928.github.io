@@ -12,6 +12,7 @@
     </style>
     <style>
         body {
+            visibility: hidden;
             font-family: 'KaiTi', 'SimSun', 'Songti SC', serif;
             background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
             color: #2c2c2c;
@@ -89,24 +90,21 @@
     </style>
 </head>
 <body>
-    <!-- 动态加载公共 header -->
     <script>
-      fetch('header.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('加载 header 失败');
-          }
-          return response.text();
-        })
-        .then(data => {
-          document.body.insertAdjacentHTML('afterbegin', data);
-        })
-        .catch(error => {
-          console.error('header 加载错误:', error);
-          // 可选：fallback 显示一个简单 header
-          document.body.insertAdjacentHTML('afterbegin', '<header><nav>加载失败，请刷新页面</nav></header>');
-        });
-    </script>
+  fetch('header.html')
+    .then(response => {
+      if (!response.ok) throw new Error('加载 header 失败');
+      return response.text();
+    })
+    .then(data => {
+      document.body.insertAdjacentHTML('afterbegin', data);
+      document.body.style.visibility = 'visible';  // 关键：全部就绪后显示
+    })
+    .catch(error => {
+      console.error('header 加载错误:', error);
+      document.body.style.visibility = 'visible';  // 出错也显示
+    });
+</script>
 
     <div class="hero">
         <h1>词苑</h1>
