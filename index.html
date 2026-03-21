@@ -84,15 +84,24 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">首页</a>
-            <a href="yulan.html">玉兰系列</a>
-            <a href="shaonianyou.html">少年游系列</a>
-            <a href="#">春雪系列（待添加）</a>
-            <a href="#">其他系列（待添加）</a>
-        </nav>
-    </header>
+    <!-- 动态加载公共 header -->
+    <script>
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('加载 header 失败');
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+        })
+        .catch(error => {
+          console.error('header 加载错误:', error);
+          // 可选：fallback 显示一个简单 header
+          document.body.insertAdjacentHTML('afterbegin', '<header><nav>加载失败，请刷新页面</nav></header>');
+        });
+    </script>
 
     <div class="hero">
         <h1>词苑</h1>
