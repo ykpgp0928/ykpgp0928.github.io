@@ -1,14 +1,15 @@
 /* 全局基础样式 */
-body {
-    visibility: hidden; /* 先隐藏，防止闪烁 */
-    font-family: 'KaiTi', 'SimSun', 'Songti SC', serif;
-    background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
-    color: #2c2c2c;
+pre {
+    font-family: "KaiTi", "STKaiti", "楷体", "DFKai-SB", "Kaiti SC", "LXGW WenKai GB", "Noto Serif SC", "Songti SC", "SimSun", serif;
+    font-size: 1.28em;          /* 或 1.32em，如果你觉得太大可以调小 */
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    color: #3a3a3a;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     margin: 0;
-    padding: 0;
-    line-height: 1.9;
 }
-
 /* header 与 nav */
 header {
     background: #5a7d9a;
