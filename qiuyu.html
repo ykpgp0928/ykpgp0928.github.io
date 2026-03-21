@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秋雨系列 | 国翔词苑</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- 如果已添加 favicon -->
+    <style>
+        body { font-family: 'KaiTi', 'SimSun', 'Songti SC', serif; background: linear-gradient(to bottom, #f8f5f2, #e8e0d9); color: #2c2c2c; margin: 0; padding: 0; line-height: 1.9; }
+        header { background: #5a7d9a; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { max-width: 900px; margin: auto; display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-size: 1.1em; }
+        nav a:hover { color: #ffd700; }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .ci { background: white; padding: 35px; margin: 30px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .title { font-size: 1.7em; text-align: center; color: #6b4e31; margin-bottom: 25px; }
+        pre { font-size: 1.28em; text-align: center; white-space: pre-wrap; }
+        .author { text-align: right; font-style: italic; color: #666; margin-top: 20px; }
+        .back { display: inline-block; margin: 30px 0; padding: 10px 20px; background: #5a7d9a; color: white; text-decoration: none; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <!-- 动态加载公共 header -->
+    <script>
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('加载 header 失败');
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+        })
+        .catch(error => {
+          console.error('header 加载错误:', error);
+          // 可选：fallback 显示一个简单 header
+          document.body.insertAdjacentHTML('afterbegin', '<header><nav>加载失败，请刷新页面</nav></header>');
+        });
+    </script>
+
+    <div class="container">
+        <a href="index.html" class="back">← 返回首页</a>
+        
+        <div class="ci">
+            <div class="title">秋雨（其一）</div>
+            <pre>
+黑云如墨胜天高，秋风怒号卷云霄
+一雨恍若新春到，簇簇灯笼垂树梢
+            </pre>
+            <p class="author">—— 暴雨洗秋，灯笼如春</p>
+        </div>
+
+        <div class="ci">
+            <div class="title">秋雨（其二）</div>
+            <pre>
+湖面波光映四方，杨柳青黄显沧桑。
+细雨迎风扑面至，烟波朦胧遮面庞。
+            </pre>
+            <p class="author">—— 细雨朦胧，杨柳沧桑</p>
+        </div>
+    </div>
+</body>
+</html>
