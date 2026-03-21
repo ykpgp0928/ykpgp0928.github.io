@@ -1,0 +1,144 @@
+/* 全局基础样式 */
+body {
+    visibility: hidden; /* 先隐藏，防止闪烁 */
+    font-family: 'LXGW WenKai GB', '霞鹜文楷 GB', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+    background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+    line-height: 1.9;
+}
+
+/* header 与 nav */
+header {
+    background: #5a7d9a;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* 内容容器 */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 诗词卡片 */
+.ci {
+    background: white;
+    padding: 35px;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.title {
+    font-size: 1.7em;
+    text-align: center;
+    color: #6b4e31;
+    margin-bottom: 25px;
+}
+
+pre {
+    font-size: 1.28em;
+    text-align: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    letter-spacing: 0.04em;
+    color: #3a3a3a;
+}
+
+.author {
+    text-align: right;
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* 返回按钮 */
+.back {
+    display: inline-block;
+    margin: 30px 0;
+    padding: 10px 20px;
+    background: #5a7d9a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* 首页特有 */
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: url('https://images.unsplash.com/photo-1580130684518-9e0c0f0e3f7a') center/cover no-repeat;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.4em;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.btn {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    text-decoration: none;
+    color: #2c2c2c;
+    font-size: 1.25em;
+    transition: all 0.3s;
+    border: 1px solid #eee;
+}
+
+.btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    color: #5a7d9a;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #777;
+    font-size: 0.95em;
+}
