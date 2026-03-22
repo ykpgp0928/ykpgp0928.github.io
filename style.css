@@ -9,7 +9,7 @@ body {
     line-height: 1.9;
 }
 
-/* ==================== header 与导航（加强动画） ==================== */
+/* ==================== header 与导航 ==================== */
 header {
     background: #5a7d9a;
     color: white;
@@ -35,15 +35,22 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 1.05em;
-    transition: all 0.3s ease;           /* 动画恢复 */
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
     color: #ffd700;
-    transform: scale(1.08);              /* 轻微放大，更明显 */
+    transform: scale(1.08);
 }
 
-/* ==================== 首页按钮（加强上浮动画） ==================== */
+/* ==================== 首页按钮（关键修复） ==================== */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));   /* 加大最小宽度 */
+    gap: 25px;
+    padding: 0 10px;
+}
+
 .btn {
     font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif;
     background: white;
@@ -54,24 +61,31 @@ nav a:hover {
     text-decoration: none;
     color: #2c2c2c;
     font-size: 1.22em;
-    transition: all 0.35s ease;          /* 更丝滑的过渡 */
+    transition: all 0.35s ease;
     border: 1px solid #eee;
 }
 
 .btn:hover {
-    transform: translateY(-12px) scale(1.03);   /* 加强上浮 + 轻微放大 */
+    transform: translateY(-12px) scale(1.03);
     box-shadow: 0 20px 35px rgba(0,0,0,0.18);
     color: #5a7d9a;
 }
 
-/* 手机端按钮优化 */
+/* ==================== 手机端专用优化（强制单列） ==================== */
 @media (max-width: 768px) {
-    .btn {
-        padding: 32px 18px;
-        font-size: 1.18em;
+    .buttons {
+        grid-template-columns: 1fr;        /* 手机强制单列，彻底不堆叠 */
+        gap: 22px;
+        padding: 0 15px;
     }
+    
+    .btn {
+        padding: 32px 20px;
+        font-size: 1.20em;
+    }
+    
     .btn:hover {
-        transform: translateY(-8px) scale(1.02);   /* 手机端动画稍温和 */
+        transform: translateY(-8px);
     }
 }
 
@@ -100,9 +114,3 @@ pre { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; font-size: 1
 .hero h1, .hero p { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; }
 
 footer { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; text-align: center; padding: 35px 15px; color: #777; font-size: 0.95em; }
-
-/* 手机端整体微调 */
-@media (max-width: 768px) {
-    nav { gap: 15px; padding: 0 10px; }
-    .hero { padding: 60px 15px 40px; min-height: 220px; }
-}
