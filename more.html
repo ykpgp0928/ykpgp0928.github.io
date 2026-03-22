@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全部系列 | 国翔词苑</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+          document.body.style.visibility = 'visible';
+        })
+        .catch(() => document.body.style.visibility = 'visible');
+    </script>
+
+    <div class="container">
+        <a href="index.html" class="back">← 返回首页</a>
+        
+        <h2 style="text-align:center; margin:40px 0 30px; font-size:1.8em;">全部系列</h2>
+        
+        <div class="ci">
+            <a href="yulan.html" style="text-decoration:none; color:inherit;">
+                🌸 玉兰系列<br>
+                <small style="color:#666;">卜算子 · 浣溪沙</small>
+            </a>
+        </div>
+        
+        <div class="ci">
+            <a href="shaonianyou.html" style="text-decoration:none; color:inherit;">
+                🍂 少年游系列<br>
+                <small style="color:#666;">秋风悲思 · 祖父抱恙</small>
+            </a>
+        </div>
+        
+        <div class="ci">
+            <a href="qiuyu.html" style="text-decoration:none; color:inherit;">
+                🌧️ 秋雨系列<br>
+                <small style="color:#666;">其一 · 其二</small>
+            </a>
+        </div>
+        
+        <!-- 以后新增系列就在这里继续加卡片 -->
+        <!-- 
+        <div class="ci">
+            <a href="新系列.html" style="text-decoration:none; color:inherit;">
+                新系列图标 新系列名称<br>
+                <small style="color:#666;">简介</small>
+            </a>
+        </div>
+        -->
+    </div>
+
+</body>
+</html>
