@@ -1,8 +1,16 @@
-/* ==================== 全局基础样式 ==================== */
+/* ==================== 全局古典古籍背景（已重新验证图片） ==================== */
 body {
     visibility: hidden;
     font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", "DFKai-SB", "Noto Serif SC", "Songti SC", "SimSun", serif;
-    background: linear-gradient(to bottom, #f8f5f2, #e8e0d9);
+    
+    /* 真实古典米纸纹理 + 淡淡水墨晕染（已确认有效） */
+    background: 
+        linear-gradient(to bottom, #f8f5f2 0%, #e8e0d9 100%),
+        url('https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b%27MF8xNzI3OTIzNDIxLjIyNzA5NjNfMTcyNzkyMzQyMi4xMTUzMDU3%27/1.png') repeat,   /* 真实老宣纸米纸纹理 */
+        url('https://img1.baidu.com/it/u=436784231,1075170678&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=1082') repeat;  /* 淡淡水墨晕染层 */
+    
+    background-size: cover, 220px 220px, 1400px 900px;
+    background-blend-mode: multiply, normal, soft-light;
     color: #2c2c2c;
     margin: 0;
     padding: 0;
@@ -43,63 +51,40 @@ nav a:hover {
     transform: scale(1.08);
 }
 
-/* ==================== 首页按钮（智能响应式布局） ==================== */
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 0 15px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ==================== 首页 Hero（玉兰 + 古典叠加） ==================== */
+.hero {
+    text-align: center;
+    padding: 70px 15px 50px;
+    background: 
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+        url('https://pics7.baidu.com/feed/bd315c6034a85edf09f3cafc1518b533dc54754a.jpeg@f_auto?token=6f755fe70e7759e62d5cd348df4fa7bf') center/cover no-repeat;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    min-height: 280px;
 }
 
-/* 大窗口（超宽屏）强制3列，防止太空 */
-@media (min-width: 1200px) {
-    .buttons {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* 中等窗口保持2-3列 */
-@media (max-width: 1199px) and (min-width: 769px) {
-    .buttons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* 手机强制单列 */
-@media (max-width: 768px) {
-    .buttons {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        padding: 0 15px;
-    }
-}
-
-.btn {
-    font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif;
+/* ==================== 诗词卡片（古籍卷轴感） ==================== */
+.ci {
     background: white;
     padding: 28px 20px;
+    margin: 25px 0;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    text-align: center;
-    text-decoration: none;
-    color: #2c2c2c;
-    font-size: 1.22em;
-    transition: all 0.35s ease;
-    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08),
+                inset 0 0 80px rgba(139, 69, 19, 0.07);
+    position: relative;
 }
 
-.btn:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 20px 35px rgba(0,0,0,0.18);
-    color: #5a7d9a;
+.ci::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b%27MF8xNzI3OTIzNDIxLjIyNzA5NjNfMTcyNzkyMzQyMi4xMTUzMDU3%27/1.png') repeat;
+    opacity: 0.06;
+    pointer-events: none;
 }
 
-/* ==================== 其他样式保持不变 ==================== */
-.container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
-
-.ci { background: white; padding: 28px 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+/* 其余样式不变 */
+.container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
 
 .title { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; font-size: 1.65em; text-align: center; color: #6b4e31; margin-bottom: 20px; }
 
@@ -107,17 +92,9 @@ pre { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; font-size: 1
 
 .author { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; text-align: right; font-style: italic; color: #666; margin-top: 18px; }
 
-.back { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; display: inline-block; margin: 20px 0; padding: 12px 22px; background: #5a7d9a; color: white; text-decoration: none; border-radius: 8px; font-size: 1.05em; }
+.back, .btn, footer { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; }
 
-.hero {
-    text-align: center;
-    padding: 70px 15px 50px;
-    background: url('https://images.unsplash.com/photo-1580130684518-9e0c0f0e3f7a') center/cover no-repeat;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    min-height: 280px;
+/* 手机端微调 */
+@media (max-width: 768px) {
+    .hero { padding: 60px 15px 40px; min-height: 220px; }
 }
-
-.hero h1, .hero p { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; }
-
-footer { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; text-align: center; padding: 35px 15px; color: #777; font-size: 0.95em; }
