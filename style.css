@@ -43,12 +43,37 @@ nav a:hover {
     transform: scale(1.08);
 }
 
-/* ==================== 首页按钮（关键修复） ==================== */
+/* ==================== 首页按钮（智能响应式布局） ==================== */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));   /* 加大最小宽度 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    padding: 0 10px;
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 大窗口（超宽屏）强制3列，防止太空 */
+@media (min-width: 1200px) {
+    .buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 中等窗口保持2-3列 */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 手机强制单列 */
+@media (max-width: 768px) {
+    .buttons {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 0 15px;
+    }
 }
 
 .btn {
@@ -71,26 +96,8 @@ nav a:hover {
     color: #5a7d9a;
 }
 
-/* ==================== 手机端专用优化（强制单列） ==================== */
-@media (max-width: 768px) {
-    .buttons {
-        grid-template-columns: 1fr;        /* 手机强制单列，彻底不堆叠 */
-        gap: 22px;
-        padding: 0 15px;
-    }
-    
-    .btn {
-        padding: 32px 20px;
-        font-size: 1.20em;
-    }
-    
-    .btn:hover {
-        transform: translateY(-8px);
-    }
-}
-
-/* ==================== 其他样式（保持不变） ==================== */
-.container { max-width: 800px; margin: 30px auto; padding: 0 15px; }
+/* ==================== 其他样式保持不变 ==================== */
+.container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
 
 .ci { background: white; padding: 28px 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
 
