@@ -11,18 +11,12 @@
 
     <script>
       fetch('header.html')
-        .then(response => {
-          if (!response.ok) throw new Error('加载 header 失败');
-          return response.text();
-        })
+        .then(response => response.text())
         .then(data => {
           document.body.insertAdjacentHTML('afterbegin', data);
           document.body.style.visibility = 'visible';
         })
-        .catch(error => {
-          console.error('header 加载错误:', error);
-          document.body.style.visibility = 'visible';
-        });
+        .catch(() => document.body.style.visibility = 'visible');
     </script>
 
     <div class="container">
@@ -35,9 +29,14 @@
 秋风带悲，催人下泪，云月又何知？
 
 天地戏人为己乐，昏镜映忧姿。
-祖父抱恙，岁余三五，滴泪化幽思。
+祖父抱恙，岁余三五¹，滴泪化幽思。
             </pre>
             <p class="author">—— 秋风萧瑟，祖孙情深</p>
+            
+            <!-- 新增注释 -->
+            <p style="text-align:center; margin-top:15px; color:#777; font-size:0.92em;">
+                （1.岁余三五：指生病了两三年）
+            </p>
         </div>
     </div>
 
