@@ -110,7 +110,7 @@ nav a:hover {
 }
 
 .ci::after {
-    content: "国翔原创";
+    content: "庸国翔原创";
     position: absolute;
     bottom: 12px;
     right: 15px;
