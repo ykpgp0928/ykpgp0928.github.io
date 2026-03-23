@@ -99,7 +99,28 @@ nav a:hover {
 /* ==================== 其他样式保持不变 ==================== */
 .container { max-width: 1200px; margin: 30px auto; padding: 0 15px; }
 
-.ci { background: white; padding: 28px 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.ci {
+    background: white;
+    padding: 28px 20px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.ci::after {
+    content: "国翔原创";
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    font-size: 0.82em;
+    color: rgba(107, 78, 49, 0.18);
+    font-family: "楷体", "KaiTi", serif;
+    pointer-events: none;
+    transform: rotate(-8deg);
+    user-select: none;
+}
 
 .title { font-family: "楷体", "KaiTi", "STKaiti", "Kaiti SC", serif; font-size: 1.65em; text-align: center; color: #6b4e31; margin-bottom: 20px; }
 
